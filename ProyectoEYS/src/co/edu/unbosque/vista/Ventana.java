@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 
 public class Ventana extends JFrame {
 	private JLabel titulo;
-	private JLabel jug1,jug2,jug3,jug4,jug5;
+	private JLabel jug1, jug2, jug3, jug4, jug5;
 	private JLabel imag;
 	private JLabel dado;
 	private JLabel dadopng;
@@ -26,13 +26,15 @@ public class Ventana extends JFrame {
 	private JButton btn2;
 	private JButton btn3;
 	private JButton btn4ram;
-	
+	public static Tablero tablero88;
 
 	public Ventana() {
 		setBounds(40, 10, 1280, 720);
 		setLayout(null);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		tablero88 = new Tablero();
 
 		titulo = new JLabel("ESCALERAS Y SERPIENTES");
 		titulo.setBounds(80, 0, 400, 100);
@@ -44,19 +46,19 @@ public class Ventana extends JFrame {
 		jug1.setText("");
 		jug1.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		jug1.setForeground(Color.white);
-		
+
 		jug2 = new JLabel();
 		jug2.setBounds(110, 345, 400, 100);
 		jug2.setText("");
 		jug2.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		jug2.setForeground(Color.white);
-		
+
 		jug3 = new JLabel();
 		jug3.setBounds(110, 415, 400, 100);
 		jug3.setText("");
 		jug3.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		jug3.setForeground(Color.white);
-		
+
 		jug4 = new JLabel();
 		jug4.setBounds(310, 265, 400, 100);
 		jug4.setText("");
@@ -86,7 +88,7 @@ public class Ventana extends JFrame {
 		btn3.setText("Salir");
 		btn3.setForeground(Color.black);
 		btn3.setBackground(Color.white);
-		
+
 		btn4ram = new JButton();
 		btn4ram.setBounds(40, 550, 100, 30);
 		btn4ram.setText("Tirar dado");
@@ -114,7 +116,7 @@ public class Ventana extends JFrame {
 				dado1.getImage().getScaledInstance(dado.getWidth(), dado.getHeight(), Image.SCALE_DEFAULT));
 		dado.setIcon(icono);
 		dado.setVisible(false);
-		
+
 		dadopng = new JLabel();
 		dadopng.setBounds(200, 600, 75, 75);
 		ImageIcon dadopng1 = new ImageIcon("media/dadopng.png");
@@ -129,9 +131,9 @@ public class Ventana extends JFrame {
 		icono = new ImageIcon(
 				ficha_r1.getImage().getScaledInstance(ficha_r.getWidth(), ficha_r.getHeight(), Image.SCALE_DEFAULT));
 		ficha_r.setIcon(icono);
-		
+
 		amongus = new JLabel();
-		amongus.setBounds(0,0,1280, 720);
+		amongus.setBounds(0, 0, 1280, 720);
 		ImageIcon amongus1 = new ImageIcon("media/among.gif");
 		icono = new ImageIcon(
 				amongus1.getImage().getScaledInstance(amongus.getWidth(), amongus.getHeight(), Image.SCALE_DEFAULT));
@@ -167,6 +169,7 @@ public class Ventana extends JFrame {
 		ficha_azul.setIcon(icono);
 
 		add(amongus);
+		add(tablero88);
 		add(jug1);
 		add(jug2);
 		add(jug3);
@@ -339,7 +342,5 @@ public class Ventana extends JFrame {
 	public void setJug5(JLabel jug5) {
 		this.jug5 = jug5;
 	}
-	
-
 
 }
