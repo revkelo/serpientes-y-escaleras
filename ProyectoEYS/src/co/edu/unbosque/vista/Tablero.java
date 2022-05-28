@@ -1,6 +1,7 @@
 package co.edu.unbosque.vista;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
 
@@ -9,54 +10,98 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class Tablero extends JPanel{
-	private JPanel[][] paneles;
+public class Tablero extends JPanel {
+	private JPanel[][] paneles = new JPanel[8][8];
+	private JLabel ficha_roja;
+	private JLabel numero_de_panel;
 	private JLabel ficha_r;
+	private JLabel ficha_azul;
+	private JLabel ficha_v;
+	private JLabel ficha_ro;
+	private JLabel ficha_mo;
+
 	public Tablero() {
-		
-		ficha_r = new JLabel();
-		ficha_r.setBounds(0, 0, 1, 1);
+
+		setLayout(new GridLayout(8, 8));
+		setBounds(540, 29, 650, 610);
+
+		ficha_roja = new JLabel();
+		ficha_roja.setBounds(-10, 40, 60, 40);
 		ImageIcon ficha_r1 = new ImageIcon("media/ficharoja.png");
 		Icon icono = new ImageIcon(
-				ficha_r1.getImage().getScaledInstance(ficha_r.getWidth(), ficha_r.getHeight(), Image.SCALE_DEFAULT));
-		ficha_r.setIcon(icono);
+				ficha_r1.getImage().getScaledInstance(ficha_roja.getWidth(), ficha_roja.getHeight(), Image.SCALE_DEFAULT));
+		ficha_roja.setIcon(icono);
 		
 		
-		paneles = new JPanel[4][4];
+		ficha_v = new JLabel();
+		ficha_v.setBounds(35, 10, 60, 40);
+		ImageIcon ficha_v1 = new ImageIcon("media/ficha_v.png");
+		icono = new ImageIcon(
+				ficha_v1.getImage().getScaledInstance(ficha_v.getWidth(), ficha_v.getHeight(), Image.SCALE_DEFAULT));
+		ficha_v.setIcon(icono);
+
+		ficha_mo = new JLabel();
+		ficha_mo.setBounds(13, -7, 60, 40);
+		ImageIcon ficha_mo1 = new ImageIcon("media/ficha_mo.png");
+		icono = new ImageIcon(
+				ficha_mo1.getImage().getScaledInstance(ficha_mo.getWidth(), ficha_mo.getHeight(), Image.SCALE_DEFAULT));
+		ficha_mo.setIcon(icono);
+
+		ficha_ro = new JLabel();
+		ficha_ro.setBounds(-10, 10, 60, 40);
+		ImageIcon ficha_ro1 = new ImageIcon("media/ficha_ro.png");
+		icono = new ImageIcon(
+				ficha_ro1.getImage().getScaledInstance(ficha_ro.getWidth(), ficha_ro.getHeight(), Image.SCALE_DEFAULT));
+		ficha_ro.setIcon(icono);
+
+		ficha_azul = new JLabel();
+		ficha_azul.setBounds(35, 40, 60, 40);
+		ImageIcon ficha_azul1 = new ImageIcon("media/ficha_azul.png");
+		icono = new ImageIcon(ficha_azul1.getImage().getScaledInstance(ficha_azul.getWidth(), ficha_azul.getHeight(),
+				Image.SCALE_DEFAULT));
+		ficha_azul.setIcon(icono);
+
+		this.tablero_paneles();
+		this.colortablero();
+
+		paneles[7][0].add(ficha_roja);
+		paneles[7][0].add(ficha_v);
+		paneles[7][0].add(ficha_azul);
+		paneles[7][0].add(ficha_mo);
+		paneles[7][0].add(ficha_ro);
+		setVisible(true);
+
+	}
+
+	/**
+	 * Este metodo determina los colores de las casillas
+	 * 
+	 * @author Kevin
+	 * @param none
+	 * @return void
+	 **/
+
+	public void colortablero() {
+		for (int i = 0; i < paneles.length; i++) {
+			for (int j = 0; j < paneles.length; j++) {
+				add(paneles[i][j]);
+				if ((i + j + 1) % 2 == 0) {
+					paneles[i][j].setBackground(Color.BLACK);
+				} else {
+					paneles[i][j].setBackground(Color.WHITE);
+				}
+
+			}
+		}
+	}
+
+	public void tablero_paneles() {
 		for (int i = 0; i < paneles.length; i++) {
 			for (int j = 0; j < paneles.length; j++) {
 				paneles[i][j] = new JPanel();
-
+				paneles[i][j].setLayout(null);
 			}
 		}
-		this.armado();
-		this.atributos();
-		this.lanzar_tablero();
-		
-	}
-	public void atributos() {
-		setLayout(new GridLayout(4,4));
-		setBounds(540, 29, 650, 610);
-		
-	}
-public void armado () {
-	for (int i = 0; i < paneles.length; i++) {
-		for (int j = 0; j < paneles.length; j++) {
-			add(paneles[i][j]);
-			if((i+j+1)%2==0) {
-				paneles[i][j].setBackground(Color.BLACK);
-			}
-			else {
-				paneles[i][j].setBackground(Color.WHITE);
-			}
-			
-		}
-	}
-}
-public void lanzar_tablero() {
-	setVisible(true);
-}
-	
-	
 
+	}
 }
