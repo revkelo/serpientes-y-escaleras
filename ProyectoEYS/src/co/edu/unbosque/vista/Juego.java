@@ -35,25 +35,25 @@ public class Juego extends JFrame {
 
 		jug1 = new JLabel();
 		jug1.setBounds(110, 265, 400, 100);
-		jug1.setText("");
+		jug1.setText("Kevin");
 		jug1.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		jug1.setForeground(Color.white);
 
 		jug2 = new JLabel();
 		jug2.setBounds(110, 345, 400, 100);
-		jug2.setText("");
+		jug2.setText("Carlos");
 		jug2.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		jug2.setForeground(Color.white);
 
 		jug3 = new JLabel();
-		jug3.setBounds(110, 415, 400, 100);
-		jug3.setText("");
+		jug3.setBounds(310, 345, 400, 100);
+		jug3.setText("Arroz");
 		jug3.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		jug3.setForeground(Color.white);
 
 		jug4 = new JLabel();
 		jug4.setBounds(310, 265, 400, 100);
-		jug4.setText("");
+		jug4.setText("Pollo");
 		jug4.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		jug4.setForeground(Color.white);
 

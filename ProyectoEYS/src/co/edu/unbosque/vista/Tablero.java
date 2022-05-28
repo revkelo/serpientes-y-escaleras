@@ -13,12 +13,9 @@ import javax.swing.JPanel;
 public class Tablero extends JPanel {
 	private JPanel[][] paneles = new JPanel[8][8];
 	private JLabel ficha_roja;
-	private JLabel numero_de_panel;
-	private JLabel ficha_r;
 	private JLabel ficha_azul;
 	private JLabel ficha_v;
 	private JLabel ficha_ro;
-	private JLabel ficha_mo;
 
 	public Tablero() {
 
@@ -40,12 +37,7 @@ public class Tablero extends JPanel {
 				ficha_v1.getImage().getScaledInstance(ficha_v.getWidth(), ficha_v.getHeight(), Image.SCALE_DEFAULT));
 		ficha_v.setIcon(icono);
 
-		ficha_mo = new JLabel();
-		ficha_mo.setBounds(13, -7, 60, 40);
-		ImageIcon ficha_mo1 = new ImageIcon("media/ficha_mo.png");
-		icono = new ImageIcon(
-				ficha_mo1.getImage().getScaledInstance(ficha_mo.getWidth(), ficha_mo.getHeight(), Image.SCALE_DEFAULT));
-		ficha_mo.setIcon(icono);
+		
 
 		ficha_ro = new JLabel();
 		ficha_ro.setBounds(-10, 10, 60, 40);
@@ -67,7 +59,6 @@ public class Tablero extends JPanel {
 		paneles[7][0].add(ficha_roja);
 		paneles[7][0].add(ficha_v);
 		paneles[7][0].add(ficha_azul);
-		paneles[7][0].add(ficha_mo);
 		paneles[7][0].add(ficha_ro);
 		setVisible(true);
 
