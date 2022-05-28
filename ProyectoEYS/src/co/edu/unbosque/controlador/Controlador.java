@@ -14,9 +14,11 @@ import javax.swing.Timer;
 public class Controlador implements ActionListener {
 	private Ventana vp;
 	private Consola miconsola;
-	private int personasjugando, numeroalatoreo;
+	private int personasjugando, numeroalatoreo = 0;
 	private Jugadores p1, p2, p3, p4, p5;
 	int[] dado = { 1, 2, 3, 4, 5, 6 };
+	
+	
 
 	public Controlador() {
 		miconsola = new Consola();
@@ -43,6 +45,8 @@ public class Controlador implements ActionListener {
 		vp.getMenu1().getGuardar_nombres().setActionCommand("menu_guardar");
 		vp.getMenu1().getJugarbotontableros().addActionListener(this);
 		vp.getMenu1().getJugarbotontableros().setActionCommand("menu_jugar");
+		vp.getJuego1().getBtn4ram().addActionListener(this);
+		vp.getJuego1().getBtn4ram().setActionCommand("randomclick");
 
 	}
 
@@ -78,7 +82,11 @@ public class Controlador implements ActionListener {
 	public void dadotirar() {
 		Random r = new Random();
 		int numeroalatoreo = dado[r.nextInt(6)];
-		JOptionPane.showMessageDialog(null, "" + numeroalatoreo);
+		String numerotext = String.valueOf(numeroalatoreo);
+		vp.getJuego1().getDadopng().setVisible(false);
+		vp.getJuego1().getDado().setVisible(true);
+		vp.getJuego1().getRandom_numero().setText(numerotext);
+	return;	
 	}
 
 	@Override

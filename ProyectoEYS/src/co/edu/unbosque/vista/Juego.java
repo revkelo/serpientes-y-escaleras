@@ -12,14 +12,11 @@ import javax.swing.JLabel;
 
 public class Juego extends JFrame {
 	private JLabel titulo;
-	private JLabel jug1, jug2, jug3, jug4, jug5;
+	private JLabel jug1, jug2, jug3, jug4, random_numero;
 	private JLabel imag;
 	private JLabel dado;
 	private JLabel dadopng;
 	private JLabel amongus;
-	private JButton btn1;
-	private JButton btn2;
-	private JButton btn3;
 	private JButton btn4ram;
 	public static Tablero tablero88;
 
@@ -33,7 +30,7 @@ public class Juego extends JFrame {
 
 		titulo = new JLabel("ESCALERAS Y SERPIENTES");
 		titulo.setBounds(80, 0, 400, 100);
-		titulo.setFont(new Font("Arial Rounded MT Bold", 0, 25));
+		titulo.setFont(new Font("Segoe UI Black", 0, 25));
 		titulo.setForeground(Color.white);
 
 		jug1 = new JLabel();
@@ -60,29 +57,11 @@ public class Juego extends JFrame {
 		jug4.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		jug4.setForeground(Color.white);
 
-		jug5 = new JLabel();
-		jug5.setBounds(310, 345, 400, 100);
-		jug5.setText("");
-		jug5.setFont(new Font("Arial Rounded MT Bold", 0, 25));
-		jug5.setForeground(Color.white);
-
-		btn1 = new JButton();
-		btn1.setBounds(169, 90, 140, 50);
-		btn1.setText("Jugar");
-		btn1.setForeground(Color.black);
-		btn1.setBackground(Color.white);
-
-		btn2 = new JButton();
-		btn2.setBounds(169, 145, 140, 50);
-		btn2.setText("Mostrar");
-		btn2.setForeground(Color.black);
-		btn2.setBackground(Color.white);
-
-		btn3 = new JButton();
-		btn3.setBounds(169, 200, 140, 50);
-		btn3.setText("Salir");
-		btn3.setForeground(Color.black);
-		btn3.setBackground(Color.white);
+		random_numero = new JLabel();
+		random_numero.setBounds(230, 510, 400, 100);
+		random_numero.setText("");
+		random_numero.setFont(new Font("Arial Rounded MT Bold", 0, 40));
+		random_numero.setForeground(Color.white);
 
 		btn4ram = new JButton();
 		btn4ram.setBounds(40, 550, 100, 30);
@@ -93,7 +72,7 @@ public class Juego extends JFrame {
 
 		imag = new JLabel();
 		imag.setBounds(0, 0, 1280, 685);
-		ImageIcon imag1 = new ImageIcon("media/tableroxd.jpg");
+		ImageIcon imag1 = new ImageIcon("media/Fondo.jpg");
 		Icon icono = new ImageIcon(
 				imag1.getImage().getScaledInstance(imag.getWidth(), imag.getHeight(), Image.SCALE_DEFAULT));
 		imag.setIcon(icono);
@@ -132,12 +111,9 @@ public class Juego extends JFrame {
 		add(jug2);
 		add(jug3);
 		add(jug4);
-		add(jug5);
+		add(random_numero);
 		add(titulo);
 		add(btn4ram);
-		add(btn1);
-		add(btn2);
-		add(btn3);
 		add(dadopng);
 		add(dado);
 		add(imag);
@@ -184,14 +160,6 @@ public class Juego extends JFrame {
 		this.jug4 = jug4;
 	}
 
-	public JLabel getJug5() {
-		return jug5;
-	}
-
-	public void setJug5(JLabel jug5) {
-		this.jug5 = jug5;
-	}
-
 	public JLabel getImag() {
 		return imag;
 	}
@@ -224,30 +192,6 @@ public class Juego extends JFrame {
 		this.amongus = amongus;
 	}
 
-	public JButton getBtn1() {
-		return btn1;
-	}
-
-	public void setBtn1(JButton btn1) {
-		this.btn1 = btn1;
-	}
-
-	public JButton getBtn2() {
-		return btn2;
-	}
-
-	public void setBtn2(JButton btn2) {
-		this.btn2 = btn2;
-	}
-
-	public JButton getBtn3() {
-		return btn3;
-	}
-
-	public void setBtn3(JButton btn3) {
-		this.btn3 = btn3;
-	}
-
 	public JButton getBtn4ram() {
 		return btn4ram;
 	}
@@ -263,5 +207,15 @@ public class Juego extends JFrame {
 	public static void setTablero88(Tablero tablero88) {
 		Juego.tablero88 = tablero88;
 	}
+
+	public JLabel getRandom_numero() {
+		return random_numero;
+	}
+
+	public void setRandom_numero(JLabel random_numero) {
+		this.random_numero = random_numero;
+	}
+	
+	
 	
 }
