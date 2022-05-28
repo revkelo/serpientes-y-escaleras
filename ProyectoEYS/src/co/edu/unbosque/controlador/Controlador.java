@@ -93,10 +93,13 @@ public class Controlador implements ActionListener {
 		}
 
 		if (e.getActionCommand().equals("tutorialboton")) {
+			vp.getTutorialboton().addActionListener(null);
+	
+			JOptionPane.showMessageDialog(null, "hola bb");
 
 		}
 		if (e.getActionCommand().equals("menu_jugar")) {
-			vp.getMenu1().getTablerosmenu().setVisible(false);
+			vp.getMenu1().setVisible(false);
 			vp.getJuego1().setVisible(true);
 
 		}

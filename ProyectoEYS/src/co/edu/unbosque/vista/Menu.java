@@ -114,8 +114,8 @@ public class Menu extends JFrame {
 		jugadoresmenu.add(nombre4);
 		jugadoresmenu.add(guardar_nombres);
 		jugadoresmenu.add(fondo_menu);
-		tablerosmenu.add(fondo_tableros);
 		tablerosmenu.add(jugarbotontableros);
+		tablerosmenu.add(fondo_tableros);
 		add(jugadoresmenu);
 		add(tablerosmenu);
 
