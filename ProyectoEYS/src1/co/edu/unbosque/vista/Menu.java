@@ -14,28 +14,20 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class Menu extends JFrame {
-	private JLabel fondo_menu, fondo_tableros;
+	private JLabel fondo_menu, fondo_tableros,amongus, tablero_1, tablero_2, tablero_3;
 	private JLabel listaper, persona1, persona2, persona3, persona4;
+	private JLabel tab1, tab2, tab3;
 	private JTextField nombre1, nombre2, nombre3, nombre4;
-	private JButton guardar_nombres, jugarbotontableros;
+	private JButton guardar_nombres, tablero8x8, tablero12x12, tablero4x4;
 	private JPanel jugadoresmenu, tablerosmenu;
 	private String jugadores[] = { "1", "2", "3", "4" };
-	private JComboBox combito, ficha_jugador1, ficha_jugador2, ficha_jugador3, ficha_jugador4;
+	private JComboBox<String> numJug;
 
 	public Menu() {
-		setBounds(40, 10, 800, 850);
+		setBounds(260, 0, 800, 850);
 		setLayout(null);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		
-		JLabel ficha_v = new JLabel();
-		ficha_v.setBounds(0, 0, 100, 100);
-		Image ficha_v1 = new ImageIcon("media/ficha_v.png").getImage().getScaledInstance(30, 30, Image.SCALE_DEFAULT);
-		
-		
-	
-		Object[] img_fichas = { ficha_v1 };
-
 
 		jugadoresmenu = new JPanel();
 		jugadoresmenu.setBounds(0, 0, 800, 850);
@@ -49,50 +41,48 @@ public class Menu extends JFrame {
 
 		nombre1 = new JTextField();
 		nombre1.setBounds(220, 488, 450, 30);
+		nombre1.setVisible(false);
 
 		nombre2 = new JTextField();
 		nombre2.setBounds(220, 538, 450, 30);
+		nombre2.setVisible(false);
 
 		nombre3 = new JTextField();
 		nombre3.setBounds(220, 588, 450, 30);
+		nombre3.setVisible(false);
 
 		nombre4 = new JTextField();
 		nombre4.setBounds(220, 638, 450, 30);
+		nombre4.setVisible(false);
 
-		combito = new JComboBox(jugadores);
-		combito.setBounds(440, 390, 40, 40);
-		combito.setBackground(Color.white);
-		combito.setForeground(Color.black);
-
-		ficha_jugador1 = new JComboBox(img_fichas);
-		ficha_jugador1.setBounds(690, 483, 40, 40);
-		ficha_jugador1.setBackground(Color.white);
-		ficha_jugador1.setForeground(Color.black);
-
-		ficha_jugador2 = new JComboBox(img_fichas);
-		ficha_jugador2.setBounds(690, 533, 40, 40);
-		ficha_jugador2.setBackground(Color.white);
-		ficha_jugador2.setForeground(Color.black);
-
-		ficha_jugador3 = new JComboBox(img_fichas);
-		ficha_jugador3.setBounds(690, 583, 40, 40);
-		ficha_jugador3.setBackground(Color.white);
-		ficha_jugador3.setForeground(Color.black);
-
-		ficha_jugador4 = new JComboBox(img_fichas);
-		ficha_jugador4.setBounds(690, 633, 40, 40);
-		ficha_jugador4.setBackground(Color.white);
-		ficha_jugador4.setForeground(Color.black);
+		numJug = new JComboBox<String>(jugadores);
+		numJug.setBounds(440, 390, 40, 40);
+		numJug.setBackground(Color.white);
+		numJug.setForeground(Color.black);
 
 		guardar_nombres = new JButton("GUARDAR");
-		guardar_nombres.setBounds(300, 700, 200, 50);
+		guardar_nombres.setBounds(300, 680, 200, 50);
 		guardar_nombres.setBackground(Color.WHITE);
 		guardar_nombres.setForeground(Color.BLACK);
+		guardar_nombres.setVisible(false);
 
-		jugarbotontableros = new JButton("JUGAR");
-		jugarbotontableros.setBounds(300, 700, 200, 50);
-		jugarbotontableros.setBackground(Color.WHITE);
-		jugarbotontableros.setForeground(Color.BLACK);
+		tablero8x8 = new JButton("Normal");
+		tablero8x8.setBounds(320, 480, 150, 50);
+		tablero8x8.setFocusable(false);
+		tablero8x8.setBackground(Color.WHITE);
+		tablero8x8.setForeground(Color.BLACK);
+
+		tablero12x12 = new JButton("Difícil");
+		tablero12x12.setBounds(538, 480, 150, 50);
+		tablero12x12.setFocusable(false);
+		tablero12x12.setBackground(Color.WHITE);
+		tablero12x12.setForeground(Color.BLACK);
+
+		tablero4x4 = new JButton("Facil");
+		tablero4x4.setBounds(100, 480, 150, 50);
+		tablero4x4.setFocusable(false);
+		tablero4x4.setBackground(Color.WHITE);
+		tablero4x4.setForeground(Color.BLACK);
 
 		listaper = new JLabel("Jugadores");
 		listaper.setBounds(280, 310, 200, 200);
@@ -103,24 +93,25 @@ public class Menu extends JFrame {
 		persona1.setBounds(90, 400, 200, 200);
 		persona1.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		persona1.setForeground(Color.WHITE);
+		persona1.setVisible(false);
 
 		persona2 = new JLabel("Jugador 2");
 		persona2.setBounds(90, 450, 200, 200);
 		persona2.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		persona2.setForeground(Color.WHITE);
+		persona2.setVisible(false);
 
 		persona3 = new JLabel("Jugador 3");
 		persona3.setBounds(90, 500, 200, 200);
 		persona3.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		persona3.setForeground(Color.WHITE);
+		persona3.setVisible(false);
 
 		persona4 = new JLabel("Jugador 4");
 		persona4.setBounds(90, 550, 200, 200);
 		persona4.setFont(new Font("Arial Rounded MT Bold", 0, 25));
 		persona4.setForeground(Color.WHITE);
-
-//		
-//		arreglobotones[0].setIcon(new ImageIcon(amongus1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
+		persona4.setVisible(false);
 
 		fondo_menu = new JLabel();
 		fondo_menu.setBounds(0, 0, 800, 850);
@@ -136,6 +127,49 @@ public class Menu extends JFrame {
 				fondo_tableros.getHeight(), Image.SCALE_DEFAULT));
 		fondo_tableros.setIcon(icono);
 
+		tablero_1 = new JLabel();
+		tablero_1.setBounds(85, 250, 180, 180);
+		ImageIcon tablero_11 = new ImageIcon("media/tablero.jpg");
+		icono = new ImageIcon(tablero_11.getImage().getScaledInstance(tablero_1.getWidth(), tablero_1.getHeight(),
+				Image.SCALE_DEFAULT));
+		tablero_1.setIcon(icono);
+
+		tablero_2 = new JLabel();
+		tablero_2.setBounds(525, 250, 180, 180);
+		ImageIcon tablero_21 = new ImageIcon("media/tablero.jpg");
+		icono = new ImageIcon(tablero_21.getImage().getScaledInstance(tablero_2.getWidth(), tablero_2.getHeight(),
+				Image.SCALE_DEFAULT));
+		tablero_2.setIcon(icono);
+
+		tablero_3 = new JLabel();
+		tablero_3.setBounds(310, 250, 180, 180);
+		ImageIcon tablero_31 = new ImageIcon("media/tablero.jpg");
+		icono = new ImageIcon(tablero_31.getImage().getScaledInstance(tablero_3.getWidth(), tablero_3.getHeight(),
+				Image.SCALE_DEFAULT));
+		tablero_3.setIcon(icono);
+		
+		amongus = new JLabel();
+		amongus.setBounds(240, 550, 300, 180);
+		ImageIcon amongus1 = new ImageIcon("media/among.gif");
+		icono = new ImageIcon(amongus1.getImage().getScaledInstance(amongus.getWidth(), amongus.getHeight(),
+				Image.SCALE_DEFAULT));
+		amongus.setIcon(icono);
+
+		tab1 = new JLabel("6 x 6");
+		tab1.setBounds(375, 350, 200, 200);
+		tab1.setFont(new Font("Arial Rounded MT Bold", 0, 25));
+		tab1.setForeground(Color.WHITE);
+
+		tab2 = new JLabel("10 x 10");
+		tab2.setBounds(570, 350, 200, 200);
+		tab2.setFont(new Font("Arial Rounded MT Bold", 0, 25));
+		tab2.setForeground(Color.WHITE);
+
+		tab3 = new JLabel("4 x 4");
+		tab3.setBounds(150, 350, 200, 200);
+		tab3.setFont(new Font("Arial Rounded MT Bold", 0, 25));
+		tab3.setForeground(Color.WHITE);
+
 		jugadoresmenu.add(listaper);
 		jugadoresmenu.add(persona1);
 		jugadoresmenu.add(nombre1);
@@ -145,14 +179,19 @@ public class Menu extends JFrame {
 		jugadoresmenu.add(nombre3);
 		jugadoresmenu.add(persona4);
 		jugadoresmenu.add(nombre4);
-		jugadoresmenu.add(ficha_jugador1);
-		jugadoresmenu.add(ficha_jugador2);
-		jugadoresmenu.add(ficha_jugador3);
-		jugadoresmenu.add(ficha_jugador4);
-		jugadoresmenu.add(combito);
+		jugadoresmenu.add(numJug);
 		jugadoresmenu.add(guardar_nombres);
 		jugadoresmenu.add(fondo_menu);
-		tablerosmenu.add(jugarbotontableros);
+		tablerosmenu.add(tablero_1);
+		tablerosmenu.add(tab1);
+		tablerosmenu.add(tablero4x4);
+		tablerosmenu.add(tablero_2);
+		tablerosmenu.add(tab2);
+		tablerosmenu.add(tablero8x8);
+		tablerosmenu.add(tablero_3);
+		tablerosmenu.add(tab3);
+		tablerosmenu.add(tablero12x12);
+		tablerosmenu.add(amongus);
 		tablerosmenu.add(fondo_tableros);
 		add(jugadoresmenu);
 		add(tablerosmenu);
@@ -271,14 +310,6 @@ public class Menu extends JFrame {
 		this.tablerosmenu = tablerosmenu;
 	}
 
-	public JButton getJugarbotontableros() {
-		return jugarbotontableros;
-	}
-
-	public void setJugarbotontableros(JButton jugarbotontableros) {
-		this.jugarbotontableros = jugarbotontableros;
-	}
-
 	public String[] getJugadores() {
 		return jugadores;
 	}
@@ -287,47 +318,92 @@ public class Menu extends JFrame {
 		this.jugadores = jugadores;
 	}
 
-	public JComboBox getCombito() {
-		return combito;
+	public JComboBox<String> getNumJug() {
+		return numJug;
 	}
 
-	public void setCombito(JComboBox combito) {
-		this.combito = combito;
+	public void setNumJug(JComboBox<String> numJug) {
+		this.numJug = numJug;
 	}
 
-	public JComboBox getFicha_jugador1() {
-		return ficha_jugador1;
+	public JLabel getAmongus() {
+		return amongus;
 	}
 
-	public void setFicha_jugador1(JComboBox ficha_jugador1) {
-		this.ficha_jugador1 = ficha_jugador1;
+	public void setAmongus(JLabel amongus) {
+		this.amongus = amongus;
 	}
 
-	public JComboBox getFicha_jugador2() {
-		return ficha_jugador2;
+	public JLabel getTablero_1() {
+		return tablero_1;
 	}
 
-	public void setFicha_jugador2(JComboBox ficha_jugador2) {
-		this.ficha_jugador2 = ficha_jugador2;
+	public void setTablero_1(JLabel tablero_1) {
+		this.tablero_1 = tablero_1;
 	}
 
-	public JComboBox getFicha_jugador3() {
-		return ficha_jugador3;
+	public JLabel getTablero_2() {
+		return tablero_2;
 	}
 
-	public void setFicha_jugador3(JComboBox ficha_jugador3) {
-		this.ficha_jugador3 = ficha_jugador3;
+	public void setTablero_2(JLabel tablero_2) {
+		this.tablero_2 = tablero_2;
 	}
 
-	public JComboBox getFicha_jugador4() {
-		return ficha_jugador4;
+	public JLabel getTablero_3() {
+		return tablero_3;
 	}
 
-	public void setFicha_jugador4(JComboBox ficha_jugador4) {
-		this.ficha_jugador4 = ficha_jugador4;
+	public void setTablero_3(JLabel tablero_3) {
+		this.tablero_3 = tablero_3;
 	}
 
+	public JLabel getTab1() {
+		return tab1;
+	}
 
-	
+	public void setTab1(JLabel tab1) {
+		this.tab1 = tab1;
+	}
+
+	public JLabel getTab2() {
+		return tab2;
+	}
+
+	public void setTab2(JLabel tab2) {
+		this.tab2 = tab2;
+	}
+
+	public JLabel getTab3() {
+		return tab3;
+	}
+
+	public void setTab3(JLabel tab3) {
+		this.tab3 = tab3;
+	}
+
+	public JButton getTablero8x8() {
+		return tablero8x8;
+	}
+
+	public void setTablero8x8(JButton tablero8x8) {
+		this.tablero8x8 = tablero8x8;
+	}
+
+	public JButton getTablero12x12() {
+		return tablero12x12;
+	}
+
+	public void setTablero12x12(JButton tablero12x12) {
+		this.tablero12x12 = tablero12x12;
+	}
+
+	public JButton getTablero4x4() {
+		return tablero4x4;
+	}
+
+	public void setTablero4x4(JButton tablero4x4) {
+		this.tablero4x4 = tablero4x4;
+	}
 
 }

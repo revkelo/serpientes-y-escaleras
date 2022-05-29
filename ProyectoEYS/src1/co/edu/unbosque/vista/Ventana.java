@@ -18,10 +18,10 @@ public class Ventana extends JFrame {
 	private JButton jugarboton, tutorialboton, salirboton;
 	private Menu menu1;
 	private Juego juego1;
-	private Tablero tablero;
+	private Consola miconsola;
 
 	public Ventana() {
-		setBounds(40, 10, 800, 850);
+		setBounds(260, 0, 800, 850);
 		setLayout(null);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -29,7 +29,7 @@ public class Ventana extends JFrame {
 		
 		menu1 = new Menu();
 		juego1 = new Juego();
-		tablero = new Tablero();
+		miconsola = new Consola();
 		
 		jugarboton = new JButton("JUGAR");
 		jugarboton.setFont(new Font("Segoe UI Black", 0, 50));
@@ -113,12 +113,13 @@ public class Ventana extends JFrame {
 		this.juego1 = juego1;
 	}
 
-	public Tablero getTablero() {
-		return tablero;
+
+	public Consola getMiconsola() {
+		return miconsola;
 	}
 
-	public void setTablero(Tablero tablero) {
-		this.tablero = tablero;
+	public void setMiconsola(Consola miconsola) {
+		this.miconsola = miconsola;
 	}
 
 

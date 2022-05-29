@@ -2,12 +2,11 @@ package co.edu.unbosque.modelo;
 
 public class Jugadores {
 	private String nombre;
-	public Jugadores() {
-		// TODO Auto-generated constructor stub
+	
+	public Jugadores() {	
 	}
 	
 	public Jugadores(String nombre) {
-		super();
 		this.nombre = nombre;
 	}
 

@@ -13,12 +13,10 @@ import javax.swing.JLabel;
 public class Juego extends JFrame {
 	private JLabel titulo;
 	private JLabel jug1, jug2, jug3, jug4, random_numero;
-	private JLabel imag;
-	private JLabel dado;
-	private JLabel dadopng;
-	private JLabel amongus;
-	private JButton btn4ram;
-	public static Tablero tablero88;
+	private JLabel froja,frosada,fverde,fazul;
+	private JLabel imag,dado,dadopng,amongus;
+	private JButton btn4ram,moverficha;
+	private Tablero tablero1;
 
 	public Juego() {
 		setBounds(40, 10, 1280, 720);
@@ -26,13 +24,46 @@ public class Juego extends JFrame {
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		tablero88 = new Tablero();
+		tablero1 = new Tablero();
 
 		titulo = new JLabel("ESCALERAS Y SERPIENTES");
 		titulo.setBounds(80, 0, 400, 100);
 		titulo.setFont(new Font("Segoe UI Black", 0, 25));
 		titulo.setForeground(Color.white);
 
+		froja = new JLabel();
+		froja.setBounds(240, 355, 100, 80);
+		ImageIcon ficha_r1 = new ImageIcon("media/ficharoja.png");
+		Icon icono = new ImageIcon(
+				ficha_r1.getImage().getScaledInstance(froja.getWidth(), froja.getHeight(), Image.SCALE_DEFAULT));
+		froja.setIcon(icono);
+		
+		
+		fverde = new JLabel();
+		fverde.setBounds(240, 275, 100, 80);
+		ImageIcon fverde1 = new ImageIcon("media/ficha_v.png");
+		icono = new ImageIcon(
+				fverde1.getImage().getScaledInstance(fverde.getWidth(), fverde.getHeight(), Image.SCALE_DEFAULT));
+		fverde.setIcon(icono);
+
+		
+
+		frosada= new JLabel();
+		frosada.setBounds(40, 275, 100, 80);
+		ImageIcon frosada1 = new ImageIcon("media/ficha_ro.png");
+		icono = new ImageIcon(
+				frosada1.getImage().getScaledInstance(frosada.getWidth(), frosada.getHeight(), Image.SCALE_DEFAULT));
+		frosada.setIcon(icono);
+
+		fazul = new JLabel();
+		fazul.setBounds(40, 355, 100, 80);
+		ImageIcon fazul1 = new ImageIcon("media/ficha_azul.png");
+		icono = new ImageIcon(fazul1.getImage().getScaledInstance(fazul.getWidth(), fazul.getHeight(),
+				Image.SCALE_DEFAULT));
+		fazul.setIcon(icono);
+		
+	
+		
 		jug1 = new JLabel();
 		jug1.setBounds(110, 265, 400, 100);
 		jug1.setText("Kevin");
@@ -68,12 +99,20 @@ public class Juego extends JFrame {
 		btn4ram.setText("Tirar dado");
 		btn4ram.setForeground(Color.black);
 		btn4ram.setBackground(Color.white);
+		
+
+		moverficha = new JButton();
+		moverficha.setBounds(400, 550, 100, 30);
+		moverficha.setText("Mover");
+		moverficha.setForeground(Color.black);
+		moverficha.setBackground(Color.white);
+		
 
 
 		imag = new JLabel();
 		imag.setBounds(0, 0, 1280, 685);
 		ImageIcon imag1 = new ImageIcon("media/Fondo.jpg");
-		Icon icono = new ImageIcon(
+		icono = new ImageIcon(
 				imag1.getImage().getScaledInstance(imag.getWidth(), imag.getHeight(), Image.SCALE_DEFAULT));
 		imag.setIcon(icono);
 
@@ -106,7 +145,11 @@ public class Juego extends JFrame {
 		
 
 		add(amongus);
-		add(tablero88);
+		add(tablero1);
+		add(fazul);
+		add(fverde);
+		add(froja);
+		add(frosada);
 		add(jug1);
 		add(jug2);
 		add(jug3);
@@ -114,6 +157,7 @@ public class Juego extends JFrame {
 		add(random_numero);
 		add(titulo);
 		add(btn4ram);
+		add(moverficha);
 		add(dadopng);
 		add(dado);
 		add(imag);
@@ -200,12 +244,14 @@ public class Juego extends JFrame {
 		this.btn4ram = btn4ram;
 	}
 
-	public static Tablero getTablero88() {
-		return tablero88;
+	
+
+	public Tablero getTablero1() {
+		return tablero1;
 	}
 
-	public static void setTablero88(Tablero tablero88) {
-		Juego.tablero88 = tablero88;
+	public void setTablero1(Tablero tablero1) {
+		this.tablero1 = tablero1;
 	}
 
 	public JLabel getRandom_numero() {
@@ -214,6 +260,46 @@ public class Juego extends JFrame {
 
 	public void setRandom_numero(JLabel random_numero) {
 		this.random_numero = random_numero;
+	}
+
+	public JLabel getFroja() {
+		return froja;
+	}
+
+	public void setFroja(JLabel froja) {
+		this.froja = froja;
+	}
+
+	public JLabel getFrosada() {
+		return frosada;
+	}
+
+	public void setFrosada(JLabel frosada) {
+		this.frosada = frosada;
+	}
+
+	public JLabel getFverde() {
+		return fverde;
+	}
+
+	public void setFverde(JLabel fverde) {
+		this.fverde = fverde;
+	}
+
+	public JLabel getFazul() {
+		return fazul;
+	}
+
+	public void setFazul(JLabel fazul) {
+		this.fazul = fazul;
+	}
+
+	public JButton getMoverficha() {
+		return moverficha;
+	}
+
+	public void setMoverficha(JButton moverficha) {
+		this.moverficha = moverficha;
 	}
 	
 	
