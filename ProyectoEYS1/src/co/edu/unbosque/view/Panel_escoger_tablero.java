@@ -25,7 +25,6 @@ public class Panel_escoger_tablero extends JPanel {
         
     }
 
-
 	private void inicializarComponentes() {
 		
 		facil = new JButton ("FÁCIL");
@@ -33,9 +32,9 @@ public class Panel_escoger_tablero extends JPanel {
 		facil.setBackground(new Color(108, 246, 248, 0));
 		facil.setFont(new Font ("cooper black", 3, 20));
 		facil.setForeground(Color.white);
+		facil.setActionCommand("tfacil");
 		facil.setFocusable(false);
 		facil.setVisible(true);
-		facil.setActionCommand("6x6");
         add(facil);
         
         inter = new JButton ("MEDIO");
@@ -43,9 +42,9 @@ public class Panel_escoger_tablero extends JPanel {
         inter.setBackground(new Color(108, 246, 248, 0));
         inter.setFont(new Font ("cooper black", 3, 20));
         inter.setForeground(Color.white);
+        inter.setActionCommand("tintermedio");
         inter.setFocusable(false);
         inter.setVisible(true);
-        inter.setActionCommand("9x9");
         add(inter);
         
         dificil = new JButton ("DIFICIL");
@@ -53,9 +52,9 @@ public class Panel_escoger_tablero extends JPanel {
         dificil.setBackground(new Color(108, 246, 248, 0));
         dificil.setFont(new Font ("cooper black", 3, 20));
         dificil.setForeground(Color.white);
+        dificil.setActionCommand("tdificil");
         dificil.setFocusable(false);
         dificil.setVisible(true);
-        dificil.setActionCommand("12x12");
         add(dificil);
 		
         tab6 = new JLabel();

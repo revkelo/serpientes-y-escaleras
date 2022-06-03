@@ -5,10 +5,12 @@ import javax.swing.JFrame;
 public class Ventana_general {
 	private Ventana_menus v_principal;
 	private Ventana_juego juego1;
+	private Vista_ventana vista;
 
 	public Ventana_general() {
 		v_principal = new Ventana_menus();
 		juego1 = new Ventana_juego();
+		vista = new Vista_ventana();
 	}
 
 	public Ventana_menus getV_principal() {
@@ -25,6 +27,14 @@ public class Ventana_general {
 
 	public void setJuego1(Ventana_juego juego1) {
 		this.juego1 = juego1;
+	}
+
+	public Vista_ventana getVista() {
+		return vista;
+	}
+
+	public void setVista(Vista_ventana vista) {
+		this.vista = vista;
 	}
 	
 }

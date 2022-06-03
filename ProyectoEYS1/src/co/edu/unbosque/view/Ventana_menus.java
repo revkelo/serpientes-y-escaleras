@@ -11,7 +11,6 @@ import javax.swing.JLabel;
 
 public class Ventana_menus extends JFrame {
 
-	private Vista_ventana vista;
 	private Panel_opc po;
 	private Panel_escoger_jugadores pjug;
 	private Panel_escoger_ficha pfic;
@@ -22,7 +21,7 @@ public class Ventana_menus extends JFrame {
 	public Ventana_menus () {
 		setTitle("KEDANIKA");
 		setSize (1000, 650);
-		vista = new Vista_ventana();
+	
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		getContentPane().setBackground(Color.black);
 
@@ -103,13 +102,6 @@ public class Ventana_menus extends JFrame {
 		this.back = back;
 	}
 
-	public Vista_ventana getVista() {
-		return vista;
-	}
-
-	public void setVista(Vista_ventana vista) {
-		this.vista = vista;
-	}
 
 	public Panel_opc getPo() {
 		return po;
