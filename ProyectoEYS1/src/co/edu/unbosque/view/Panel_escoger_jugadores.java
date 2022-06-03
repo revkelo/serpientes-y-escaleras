@@ -41,7 +41,7 @@ public class Panel_escoger_jugadores extends JPanel {
 		add(listjug);
 		
 		asignn = new JLabel ("Asigne los nombres: ");
-		asignn.setBounds(50, 60, 250, 50);
+		asignn.setBounds(20, 60, 250, 50);
 		asignn.setBackground(new Color(108, 246, 248, 0));
 		asignn.setFont(new Font("cooper black", 0, 20));
 		asignn.setForeground(Color.WHITE);
@@ -56,53 +56,53 @@ public class Panel_escoger_jugadores extends JPanel {
 		add(numJug);
 
 		asig_nombre1 = new JTextField();
-		asig_nombre1.setBounds(200, 120, 200, 30);
+		asig_nombre1.setBounds(150, 120, 200, 30);
 		asig_nombre1.setFont(new Font("cooper black", 0, 20));
 		asig_nombre1.setVisible(false);
 		add(asig_nombre1);
 		
 		asig_nombre2 = new JTextField();
-		asig_nombre2.setBounds(200, 160, 200, 30);
+		asig_nombre2.setBounds(150, 160, 200, 30);
 		asig_nombre2.setFont(new Font("cooper black", 0, 20));
 		asig_nombre2.setVisible(false);
 		add(asig_nombre2);
 		
 		asig_nombre3 = new JTextField();
-		asig_nombre3.setBounds(200, 200, 200, 30);
+		asig_nombre3.setBounds(150, 200, 200, 30);
 		asig_nombre3.setFont(new Font("cooper black", 0, 20));
 		asig_nombre3.setVisible(false);
 		add(asig_nombre3);
 		
 		asig_nombre4 = new JTextField();
-		asig_nombre4.setBounds(200, 240, 200, 30);
+		asig_nombre4.setBounds(150, 240, 200, 30);
 		asig_nombre4.setFont(new Font("cooper black", 0, 20));
 		asig_nombre4.setVisible(false);
 		add(asig_nombre4);
 		
 		
 		jugador1 = new JLabel("Jugador 1");
-		jugador1.setBounds(50, 120, 200, 30);
+		jugador1.setBounds(20, 120, 200, 30);
 		jugador1.setFont(new Font("cooper black", 0, 20));
 		jugador1.setForeground(Color.white);
 		jugador1.setVisible(false);
 		add(jugador1);
 		
 		jugador2 = new JLabel("Jugador 2");
-		jugador2.setBounds(50, 160, 200, 30);
+		jugador2.setBounds(20, 160, 200, 30);
 		jugador2.setFont(new Font("cooper black", 0, 20));
 		jugador2.setForeground(Color.white);
 		jugador2.setVisible(false);
 		add(jugador2);
 		
 		jugador3 = new JLabel("Jugador 3");
-		jugador3.setBounds(50, 200, 200, 30);
+		jugador3.setBounds(20, 200, 200, 30);
 		jugador3.setFont(new Font("cooper black", 0, 20));
 		jugador3.setForeground(Color.white);
 		jugador3.setVisible(false);
 		add(jugador3);
 		
 		jugador4 = new JLabel("Jugador 4");
-		jugador4.setBounds(50, 240, 200, 30);
+		jugador4.setBounds(20, 240, 200, 30);
 		jugador4.setFont(new Font("cooper black", 0, 20));
 		jugador4.setForeground(Color.white);
 		jugador4.setVisible(false);
@@ -114,6 +114,7 @@ public class Panel_escoger_jugadores extends JPanel {
 		guardar_nombres.setFont(new Font ("cooper black", 3, 20));
 		guardar_nombres.setForeground(Color.white);
 		guardar_nombres.setActionCommand("guardar");
+		guardar_nombres.setFocusable(false);
 		guardar_nombres.setVisible(false);
         add(guardar_nombres);
         

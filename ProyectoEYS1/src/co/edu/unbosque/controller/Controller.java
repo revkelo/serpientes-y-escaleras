@@ -206,7 +206,7 @@ public class Controller implements ActionListener, MouseListener {
 			}
 
 			window.getJuego1().getTab6().repaint();
-			System.out.println((estado_inicial_casillas + 1) + "  CASILLA DONDE ESTA");
+			System.out.println((estado_inicial_casillas + 2) + "  CASILLA DONDE ESTA");
 			estado_inicial_casillas++;
 			break;
 		}
@@ -262,9 +262,10 @@ public class Controller implements ActionListener, MouseListener {
 		window.getV_principal().getPo().getCreditos().addActionListener(this);
 		window.getV_principal().getPo().getCreditos().addMouseListener(this);
 
-		window.getV_principal().getPtab().getTablero_6x6().addActionListener(this);
-		window.getV_principal().getPtab().getTablero_12x12().addActionListener(this);
-		window.getV_principal().getPtab().getTablero_9x9().addActionListener(this);
+		window.getV_principal().getPtab().getDificil().addActionListener(this);
+		window.getV_principal().getPtab().getInter().addActionListener(this);
+		window.getV_principal().getPtab().getFacil().addActionListener(this);
+
 		window.getJuego1().getDado().addActionListener(this);
 
 		window.getV_principal().getBack().addActionListener(this);
@@ -553,40 +554,40 @@ public class Controller implements ActionListener, MouseListener {
 			}
 		}
 
-		if (e.getActionCommand().equals("color_jug_1")) {
-
-			String colores = (String) window.getV_principal().getPfic().getColorjug1().getSelectedItem();
-
-			if (colores.equals("Verde")) {
-
-				// window.getPfic().getFicha_verde().setBounds(470, 245, 150, 120);
-				window.getV_principal().getPfic().getFicha_verde().setVisible(true);
-				// window.getJuego1().getFverde().setBounds(40, 275, 100, 80);
-				// window.getJuego1().getFverde().setVisible(true);
-
-			} else if (colores.equals("Rojo")) {
-
-				window.getV_principal().getPfic().getFicha_roja().setVisible(true);
-				// window.getJuego1().getFroja().setBounds(40, 275, 100, 80);
-				// window.getJuego1().getFroja().setVisible(true);
-
-			} else if (colores.equals("Rosado")) {
-
-				// window.getPfic().getFicha_rosada().setBounds(470, 245, 150, 120);
-				window.getV_principal().getPfic().getFicha_rosada().setVisible(true);
-				// window.getJuego1().getFrosada().setVisible(true);
-
-			} else if (colores.equals("Azul")) {
-
-				// window.getPfic().getFicha_azul().setBounds(470, 245, 150, 120);
-				window.getV_principal().getPfic().getFicha_azul().setVisible(true);
-				// window.getJuego1().getFazul().setBounds(40, 275, 100, 80);
-				// window.getJuego1().getFazul().setVisible(true);
-
-			}
+//		if (e.getActionCommand().equals("color_jug_1")) {
+//
+//			String colores = (String) window.getV_principal().getPfic().getColorjug1().getSelectedItem();
+//
+//			if (colores.equals("Verde")) {
+//
+//				// window.getPfic().getFicha_verde().setBounds(470, 245, 150, 120);
+//				window.getV_principal().getPfic().getFicha_verde().setVisible(true);
+//				// window.getJuego1().getFverde().setBounds(40, 275, 100, 80);
+//				// window.getJuego1().getFverde().setVisible(true);
+//
+//			} else if (colores.equals("Rojo")) {
+//
+//				window.getV_principal().getPfic().getFicha_roja().setVisible(true);
+//				// window.getJuego1().getFroja().setBounds(40, 275, 100, 80);
+//				// window.getJuego1().getFroja().setVisible(true);
+//
+//			} else if (colores.equals("Rosado")) {
+//
+//				// window.getPfic().getFicha_rosada().setBounds(470, 245, 150, 120);
+//				window.getV_principal().getPfic().getFicha_rosada().setVisible(true);
+//				// window.getJuego1().getFrosada().setVisible(true);
+//
+//			} else if (colores.equals("Azul")) {
+//
+//				// window.getPfic().getFicha_azul().setBounds(470, 245, 150, 120);
+//				window.getV_principal().getPfic().getFicha_azul().setVisible(true);
+//				// window.getJuego1().getFazul().setBounds(40, 275, 100, 80);
+//				// window.getJuego1().getFazul().setVisible(true);
+//
+//			}
 		}
 
-	}
+	
 
 	@Override
 	public void mouseClicked(MouseEvent e) {

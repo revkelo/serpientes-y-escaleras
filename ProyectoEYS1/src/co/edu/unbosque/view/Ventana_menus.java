@@ -15,12 +15,11 @@ public class Ventana_menus extends JFrame {
 	private Panel_opc po;
 	private Panel_escoger_jugadores pjug;
 	private Panel_escoger_ficha pfic;
-	private panel_escoger_tablero ptab;
+	private Panel_escoger_tablero ptab;
 	private JButton back;
 	private JLabel img_fondo;
 	
 	public Ventana_menus () {
-
 		setTitle("KEDANIKA");
 		setSize (1000, 650);
 		vista = new Vista_ventana();
@@ -44,14 +43,6 @@ public class Ventana_menus extends JFrame {
 		po.setBounds(225, 225, 540, 250);
 		getContentPane().add(po);
 		
-		
-
-		ptab = new panel_escoger_tablero();
-		ptab.setBounds(225, 225, 540, 250);
-		ptab.setLayout(null);
-		getContentPane().add(ptab);
-		
-		
 		back = new JButton("Back");
 		back.setBounds(850, 550, 100, 50);
 		back.setBackground(new Color(108, 246, 248, 0));
@@ -66,13 +57,26 @@ public class Ventana_menus extends JFrame {
 		getContentPane().add(pjug);	
 		
 		pfic = new Panel_escoger_ficha ();
-		pfic.setBounds(225, 150, 540, 350);
+		pfic.setBounds(220, 170, 600, 350);
 		getContentPane().add(pfic);	
+		
+		ptab = new Panel_escoger_tablero();
+		ptab.setBounds(225, 150, 540, 350);
+		getContentPane().add(ptab);	
 
 		img_fondo = new JLabel("", JLabel.CENTER);
 		img_fondo.setIcon(new ImageIcon("imagenes/Fondo1.gif"));
 		add(img_fondo);
 		
+	}
+
+
+	public Panel_escoger_tablero getPtab() {
+		return ptab;
+	}
+
+	public void setPtab(Panel_escoger_tablero ptab) {
+		this.ptab = ptab;
 	}
 
 	public Panel_escoger_ficha getPfic() {
@@ -122,14 +126,5 @@ public class Ventana_menus extends JFrame {
 	public void setImg_fondo(JLabel img_fondo) {
 		this.img_fondo = img_fondo;
 	}
-
-	public panel_escoger_tablero getPtab() {
-		return ptab;
-	}
-
-	public void setPtab(panel_escoger_tablero ptab) {
-		this.ptab = ptab;
-	}
-
 
 }
