@@ -48,3 +48,8 @@ git clone https://github.com/revkelo/serpientes-y-escaleras.git
 ```
 
 Abrir en Eclipse o IntelliJ como proyecto Java existente y ejecutar `AplMain.java`.
+
+---
+
+> Este repositorio se llamó originalmente **`serpientes-y-escaleras`** — y así se queda.
+> Fue el primer proyecto terminado de verdad, cuando aprender a mover una ficha en pantalla era un logro.
