@@ -1,3 +1,7 @@
+/**
+ * Paquete vista que gestiona la interfaz grafica
+ */
+
 package co.edu.unbosque.view;
 
 import java.awt.Color;
@@ -9,37 +13,76 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * Panel destinado a que el usuario escoja la ficha que desea en el juego
+ * @author Daniela
+ * @author Nicolas
+ * @author Kevin
+ * @author Katherine
+ * @version 1.1
+ */
+
 public class Panel_escoger_jugadores extends JPanel {
 
-    private JLabel listjug, asignn;
-    private JComboBox<String> numJug;
+	/**
+	 * Atributos tipo JLabel que guian al usuario dentro del juego
+	 */
+	private JLabel listjug, asignn;
+
+	/**
+	 * Atributo tipo JComboBox para que el usuario elija el numero de jugadores
+	 */
+
+	private JComboBox<String> numJug;
+
+	/**
+	 * Arreglo tipo String que contiene las opciones de cuantos jugadores pueden participar
+	 */
 	private String jugadores[] = { "1", "2", "3", "4" };
+
+	/**
+	 * Atributo tipo TextField para que el o los usuarios ingresen su apodo o nombre dentro del juego
+	 */
 	private JTextField asig_nombre1, asig_nombre2, asig_nombre3, asig_nombre4;
+
+	/**
+	 * Atributo tipo JLabel para que el o los usuarios entiendan el numero de jugador
+	 */
 	private JLabel jugador1, jugador2, jugador3, jugador4;
-	private JLabel nombrepersona1, nombrepersona2, nombrepersona3, nombrepersona4;
+
+	/**
+	 * Atributo tipo JButton que hara entender al usuario que los nombres se guardaron correctamente
+	 */
 	private JButton guardar_nombres;
-	
-    public Panel_escoger_jugadores() {
-    	
-        setLayout(null);
-        setBackground(new Color(108, 246, 248, 0));
-        
-        inicializarComponentes();
-        
-        setVisible(false);
-        
-    }
+
+	/**
+	 * Metodo constructor
+	 */
+	public Panel_escoger_jugadores() {
+
+		setLayout(null);
+		setBackground(new Color(108, 246, 248, 0));
+
+		inicializarComponentes();
+
+		setVisible(false);
+
+	}
+
+	/**
+	 * Metodo en el que asignamos las caracteristicas a cada atributo
+	 */
 
 	private void inicializarComponentes() {
 
-        
+
 		listjug = new JLabel ("¿Cuántas personas jugaran?");
 		listjug.setBounds(80, 20, 300, 50);
-    	listjug.setBackground(new Color(108, 246, 248, 0));
+		listjug.setBackground(new Color(108, 246, 248, 0));
 		listjug.setFont(new Font("cooper black", 0, 20));
 		listjug.setForeground(Color.WHITE);
 		add(listjug);
-		
+
 		asignn = new JLabel ("Asigne los nombres: ");
 		asignn.setBounds(20, 60, 250, 50);
 		asignn.setBackground(new Color(108, 246, 248, 0));
@@ -47,7 +90,7 @@ public class Panel_escoger_jugadores extends JPanel {
 		asignn.setForeground(Color.WHITE);
 		asignn.setVisible(false);
 		add(asignn);
-		
+
 		numJug = new JComboBox <String> (jugadores);
 		numJug.setBounds(410, 40, 50, 25);
 		numJug.setBackground(new Color(108, 246, 248, 0));
@@ -60,54 +103,54 @@ public class Panel_escoger_jugadores extends JPanel {
 		asig_nombre1.setFont(new Font("cooper black", 0, 20));
 		asig_nombre1.setVisible(false);
 		add(asig_nombre1);
-		
+
 		asig_nombre2 = new JTextField();
 		asig_nombre2.setBounds(150, 160, 200, 30);
 		asig_nombre2.setFont(new Font("cooper black", 0, 20));
 		asig_nombre2.setVisible(false);
 		add(asig_nombre2);
-		
+
 		asig_nombre3 = new JTextField();
 		asig_nombre3.setBounds(150, 200, 200, 30);
 		asig_nombre3.setFont(new Font("cooper black", 0, 20));
 		asig_nombre3.setVisible(false);
 		add(asig_nombre3);
-		
+
 		asig_nombre4 = new JTextField();
 		asig_nombre4.setBounds(150, 240, 200, 30);
 		asig_nombre4.setFont(new Font("cooper black", 0, 20));
 		asig_nombre4.setVisible(false);
 		add(asig_nombre4);
-		
-		
+
+
 		jugador1 = new JLabel("Jugador 1");
 		jugador1.setBounds(20, 120, 200, 30);
 		jugador1.setFont(new Font("cooper black", 0, 20));
 		jugador1.setForeground(Color.white);
 		jugador1.setVisible(false);
 		add(jugador1);
-		
+
 		jugador2 = new JLabel("Jugador 2");
 		jugador2.setBounds(20, 160, 200, 30);
 		jugador2.setFont(new Font("cooper black", 0, 20));
 		jugador2.setForeground(Color.white);
 		jugador2.setVisible(false);
 		add(jugador2);
-		
+
 		jugador3 = new JLabel("Jugador 3");
 		jugador3.setBounds(20, 200, 200, 30);
 		jugador3.setFont(new Font("cooper black", 0, 20));
 		jugador3.setForeground(Color.white);
 		jugador3.setVisible(false);
 		add(jugador3);
-		
+
 		jugador4 = new JLabel("Jugador 4");
 		jugador4.setBounds(20, 240, 200, 30);
 		jugador4.setFont(new Font("cooper black", 0, 20));
 		jugador4.setForeground(Color.white);
 		jugador4.setVisible(false);
 		add(jugador4);
-		
+
 		guardar_nombres = new JButton("GUARDAR");
 		guardar_nombres.setBounds(200, 300, 200, 30);
 		guardar_nombres.setBackground(new Color(108, 246, 248, 0));
@@ -116,38 +159,16 @@ public class Panel_escoger_jugadores extends JPanel {
 		guardar_nombres.setActionCommand("guardar");
 		guardar_nombres.setFocusable(false);
 		guardar_nombres.setVisible(false);
-        add(guardar_nombres);
-        
-		
-//		nombrepersona1 = new JLabel("Nombre 1");
-//		nombrepersona1.setBounds(200, 200, 200, 200);
-//		nombrepersona1.setFont(new Font("Arial Rounded MT Bold", 0, 25));
-//		nombrepersona1.setForeground(Color.WHITE);
-//		nombrepersona1.setVisible(true);
-//		add(nombrepersona1);
-//		
-//		nombrepersona2 = new JLabel("nombre 2");
-//		nombrepersona2.setBounds(200, 280, 200, 200);
-//		nombrepersona2.setFont(new Font("Arial Rounded MT Bold", 0, 25));
-//		nombrepersona2.setForeground(Color.WHITE);
-//		nombrepersona2.setVisible(true);
-//		add(nombrepersona2);
-//		
-//		nombrepersona3 = new JLabel("nombre 3");
-//		nombrepersona3.setBounds(200, 360, 200, 200);
-//		nombrepersona3.setFont(new Font("Arial Rounded MT Bold", 0, 25));
-//		nombrepersona3.setForeground(Color.WHITE);
-//		nombrepersona3.setVisible(true);
-//		add(nombrepersona3);
-//		
-//		nombrepersona4 = new JLabel("nombre 4");
-//		nombrepersona4.setBounds(200, 440, 200, 200);
-//		nombrepersona4.setFont(new Font("Arial Rounded MT Bold", 0, 25));
-//		nombrepersona4.setForeground(Color.WHITE);
-//		nombrepersona4.setVisible(true);
-//		add(nombrepersona4);
-		
+		add(guardar_nombres);
+
 	}
+
+	/**
+	 * @param listjug, asignn, numJug, asig_nombre1, asig_nombre2, asig_nombre3, asig_nombre4, jugador1, jugador2, jugador3, jugador4,
+	 * guardar_nombres
+	 * @return listjug, asignn, numJug, asig_nombre1, asig_nombre2, asig_nombre3, asig_nombre4, jugador1, jugador2, jugador3, jugador4,
+	 * guardar_nombres
+	 */
 
 	public JLabel getAsignn() {
 		return asignn;
@@ -259,38 +280,6 @@ public class Panel_escoger_jugadores extends JPanel {
 
 	public void setJugador4(JLabel jugador4) {
 		this.jugador4 = jugador4;
-	}
-
-	public JLabel getNombrepersona1() {
-		return nombrepersona1;
-	}
-
-	public void setNombrepersona1(JLabel nombrepersona1) {
-		this.nombrepersona1 = nombrepersona1;
-	}
-
-	public JLabel getNombrepersona2() {
-		return nombrepersona2;
-	}
-
-	public void setNombrepersona2(JLabel nombrepersona2) {
-		this.nombrepersona2 = nombrepersona2;
-	}
-
-	public JLabel getNombrepersona3() {
-		return nombrepersona3;
-	}
-
-	public void setNombrepersona3(JLabel nombrepersona3) {
-		this.nombrepersona3 = nombrepersona3;
-	}
-
-	public JLabel getNombrepersona4() {
-		return nombrepersona4;
-	}
-
-	public void setNombrepersona4(JLabel nombrepersona4) {
-		this.nombrepersona4 = nombrepersona4;
 	}
 
 	public JButton getGuardar_nombres() {

@@ -1,3 +1,7 @@
+/**
+ * Paquete vista que gestiona la interfaz grafica
+ */
+
 package co.edu.unbosque.view;
 
 import java.awt.Color;
@@ -12,34 +16,72 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+/**
+ * Panel destinado a que el usuario escoja la ficha que desea en el juego
+ * @author Daniela
+ * @author Nicolas
+ * @author Kevin
+ * @author Katherine
+ * @version 1.1
+ */
+
 public class Panel_escoger_ficha extends JPanel {
 
+	/**
+	 * Atributo tipo JLabel en donde se guarda el nombre de cada jugador
+	 */
 	private JLabel nombrejugador1, nombrejugador2, nombrejugador3, nombrejugador4;
+
+	/**
+	 * Atributo tipo JComboBox para que el usuario veas las opciones de vista que tiene
+	 */
+
 	private JComboBox<String> colorjug1, colorjug2, colorjug3, colorjug4;
+
+	/**
+	 * Arreglo tipo String que contiene el nombre de las fichas 
+	 */
 	private String colores[] = { "Planeta", "Alien", "Nave", "Estrella" };
+
+	/**
+	 * Atributo tipo JLabel en el que se guardan las imagenes de las fichas como iconos
+	 */
+
 	private JLabel ficha_planeta, ficha_nave, ficha_estrella, ficha_alien;
+
+	/**
+	 * Boton para hacer entender al usuario que las fichas se guardaron correctamente 
+	 */
 	private JButton guardar_color;
-	
+
+	/**
+	 * Metodo constructor
+	 */
+
 	public Panel_escoger_ficha () {
-		
+
 		setLayout(null);
-        setBackground(new Color(108, 246, 248, 0));
-        
-        inicializarComponentes();
-        
-        setVisible(false);
-        
-    }
+		setBackground(new Color(108, 246, 248, 0));
+
+		inicializarComponentes();
+
+		setVisible(false);
+
+	}
+
+	/**
+	 * Metodo en el que asignamos las caracteristicas a cada atributo
+	 */
 
 	private void inicializarComponentes() {
-		
+
 		nombrejugador1 = new JLabel("Nombre 1:");
 		nombrejugador1.setBounds(20, 50, 200, 50);
 		nombrejugador1.setFont(new Font("cooper black", 0, 20));
 		nombrejugador1.setForeground(Color.WHITE);
 		nombrejugador1.setVisible(true);
 		add(nombrejugador1);
-		
+
 		nombrejugador2 = new JLabel("Nombre 2:");
 		nombrejugador2.setBounds(20, 100, 200, 50);
 		nombrejugador2.setFont(new Font("cooper black", 0, 20));
@@ -89,16 +131,6 @@ public class Panel_escoger_ficha extends JPanel {
 		colorjug4.setForeground(Color.black);
 		add(colorjug4);
 
-//		ficha_roja = new JLabel();
-//		ficha_roja.setBounds(470, 245, 150, 120);
-//		ImageIcon ficha_r1 = new ImageIcon("media/ficharoja.png");
-		
-//		Icon icono = new ImageIcon(ficha_r1.getImage().getScaledInstance(ficha_roja.getWidth(), ficha_roja.getHeight(),
-//		Image.SCALE_DEFAULT));
-//		ficha_roja.setIcon(icono);
-//		ficha_roja.setVisible(false);
-//		add(ficha_roja);
-
 		guardar_color = new JButton("GUARDAR");
 		guardar_color.setBounds(190, 300, 200, 30);
 		guardar_color.setBackground(new Color(108, 246, 248, 0));
@@ -106,122 +138,41 @@ public class Panel_escoger_ficha extends JPanel {
 		guardar_color.setForeground(Color.white);
 		guardar_color.setActionCommand("guardar1");
 		guardar_color.setFocusable(false);
-		guardar_color.setVisible(false);
-        add(guardar_color);
-		
-//		ficha_roja = new JLabel();
-//		ficha_roja.setBounds(350, 70, 150, 120);
-//		ficha_roja.setIcon(new ImageIcon("imagenes/ficharoja.png"));
-//		ficha_roja.setVisible(false);
-//		add(ficha_roja);
-//		
-//		ficha_verde = new JLabel();
-//		ficha_verde.setBounds(350, 120, 150, 120);
-//		ficha_verde.setIcon(new ImageIcon("imagenes/ficharoja.png"));
-//		ficha_verde.setVisible(false);
-//		add(ficha_verde);
-//		
-//		ficha_rosada = new JLabel();
-//		ficha_rosada.setBounds(350, 170, 150, 120);
-//		ficha_rosada.setIcon(new ImageIcon("imagenes/ficharoja.png"));
-//		ficha_rosada.setVisible(false);
-//		add(ficha_rosada);
-//		
-//		ficha_azul = new JLabel();
-//		ficha_azul.setBounds(350, 220, 150, 120);
-//		ficha_azul.setIcon(new ImageIcon("imagenes/ficharoja.png"));
-//		ficha_azul.setVisible(false);
-//		add(ficha_azul);
-		
-//      ficha_roja = new JLabel();
-//		ficha_roja.setBounds(280, 70, 120, 50);
-//		ImageIcon ficha_r1 = new ImageIcon("imagenes/ficharoja.png");
-//		Icon icono = new ImageIcon(ficha_r1.getImage().getScaledInstance(ficha_roja.getWidth(), ficha_roja.getHeight(),
-//		Image.SCALE_DEFAULT));
-//		ficha_roja.setIcon(icono);
-//		ficha_roja.setVisible(true);
-//		add(ficha_roja);
-	
+		guardar_color.setVisible(true);
+		add(guardar_color);
+
 		ficha_nave = new JLabel();
 		ficha_nave.setBounds(430, -20, 100, 210);
-		ficha_nave.setIcon(new ImageIcon("imagenes/Ficha.nave.png"));
-		ficha_nave.setVisible(true);
+		ficha_nave.setIcon(new ImageIcon("imagenes/nave.png"));
+		ficha_nave.setVisible(false);
 		add(ficha_nave);
-		
+
 		ficha_planeta = new JLabel();
 		ficha_planeta.setBounds(430, 30, 100, 210);
 		ficha_planeta.setIcon(new ImageIcon("imagenes/Saturnoo.png"));
-		ficha_planeta.setVisible(true);
+		ficha_planeta.setVisible(false);
 		add(ficha_planeta);
-		
+
 		ficha_estrella = new JLabel();
 		ficha_estrella.setBounds(430, 80, 100, 210);
 		ficha_estrella.setIcon(new ImageIcon("imagenes/Estrellaa.png"));
-		ficha_estrella.setVisible(true);
+		ficha_estrella.setVisible(false);
 		add(ficha_estrella);
-		
+
 		ficha_alien = new JLabel();
 		ficha_alien.setBounds(435, 130, 100, 210);
 		ficha_alien.setIcon(new ImageIcon("imagenes/Alien.png"));
-		ficha_alien.setVisible(true);
+		ficha_alien.setVisible(false);
 		add(ficha_alien);
-		
-//		ficha_verde = new JLabel();
-//		ficha_verde.setBounds(280, 200, 150, 120);
-//		ImageIcon ficha_verde1 = new ImageIcon("imagenes/ficha_v.png");
-//		icono = new ImageIcon(ficha_verde1.getImage().getScaledInstance(ficha_verde.getWidth(), ficha_verde.getHeight(),
-//		Image.SCALE_DEFAULT));
-//		ficha_verde.setIcon(icono);
-//		ficha_verde.setVisible(true);
-//		add(ficha_verde);
-		
-		
-//		ficha_rosada = new JLabel();
-//		ficha_rosada.setBounds(280, 200, 150, 120);
-//		ImageIcon ficha_rosada1 = new ImageIcon("imagenes/ficha_ro.png");
-//		icono = new ImageIcon(ficha_rosada1.getImage().getScaledInstance(ficha_rosada.getWidth(),
-//		ficha_rosada.getHeight(), Image.SCALE_DEFAULT));
-//		ficha_rosada.setIcon(icono);
-//		ficha_rosada.setVisible(true);
-//		add(ficha_rosada);
-//		
-//		ficha_azul = new JLabel();
-//		ficha_azul.setBounds(280, 200, 150, 120);
-//		ImageIcon ficha_azul1 = new ImageIcon("imagenes/ficha_azul.png");
-//		icono = new ImageIcon(ficha_azul1.getImage().getScaledInstance(ficha_azul.getWidth(), ficha_azul.getHeight(),
-//		Image.SCALE_DEFAULT));
-//		ficha_azul.setIcon(icono);
-//		ficha_azul.setVisible(true);
-//		add(ficha_azul);
-				
-//		ficha_verde = new JLabel();
-//		ficha_verde.setBounds(470, 325, 150, 120);
-//		ImageIcon ficha_verde1 = new ImageIcon("media/ficha_v.png");
-//		icono = new ImageIcon(ficha_verde1.getImage().getScaledInstance(ficha_verde.getWidth(), ficha_verde.getHeight(),
-//		Image.SCALE_DEFAULT));
-//		ficha_verde.setIcon(icono);
-//		ficha_verde.setVisible(false);
-//		add(ficha_verde);
-//
-//		ficha_rosada = new JLabel();
-//		ficha_rosada.setBounds(470, 405, 150, 120);
-//		ImageIcon ficha_rosada1 = new ImageIcon("media/ficha_ro.png");
-//		icono = new ImageIcon(ficha_rosada1.getImage().getScaledInstance(ficha_rosada.getWidth(),
-//		ficha_rosada.getHeight(), Image.SCALE_DEFAULT));
-//		ficha_rosada.setIcon(icono);
-//		ficha_rosada.setVisible(false);
-//		add(ficha_rosada);
-//
-//		ficha_azul = new JLabel();
-//		ficha_azul.setBounds(470, 485, 150, 120);
-//		ImageIcon ficha_azul1 = new ImageIcon("media/ficha_azul.png");
-//		icono = new ImageIcon(ficha_azul1.getImage().getScaledInstance(ficha_azul.getWidth(), ficha_azul.getHeight(),
-//		Image.SCALE_DEFAULT));
-//		ficha_azul.setIcon(icono);
-//		ficha_azul.setVisible(false);
-//		add(ficha_azul);
 
 	}
+
+	/**
+	 * @param nombrejugador1, nombrejugador2, nombrejugador3, nombrejugador4, colorjug1, colorjug2, colorjug3, colorjug4,
+	 * colores[], ficha_planeta, ficha_nave, ficha_estrella, ficha_alien, guardar_color
+	 * @return nombrejugador1, nombrejugador2, nombrejugador3, nombrejugador4, colorjug1, colorjug2, colorjug3, colorjug4,
+	 * colores[], ficha_planeta, ficha_nave, ficha_estrella, ficha_alien, guardar_color
+	 */
 
 	public JButton getGuardar_color() {
 		return guardar_color;
@@ -229,7 +180,7 @@ public class Panel_escoger_ficha extends JPanel {
 
 	public void setGuardar_color(JButton guardar_color) {
 		this.guardar_color = guardar_color;
-		
+
 	}
 
 	public JLabel getFicha_planeta() {

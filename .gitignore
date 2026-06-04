@@ -1,0 +1,12 @@
+# Compilados
+ProyectoEYS1/bin/
+*.class
+
+# Eclipse
+.settings/
+.classpath
+.project
+
+# IDE
+*.iml
+.idea/
